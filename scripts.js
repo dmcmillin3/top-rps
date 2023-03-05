@@ -1,47 +1,42 @@
-let computerChoice = "";
-let playerChoice = "Scissors";
+const computerChoice = getComputerChoice();
+const playerChoice = "Scissors";
 
 function getComputerChoice() {
     let randomNumber = Math.random();
     console.log("Random Number: " + randomNumber);
 
     if (randomNumber >= 0.67) {
-        computerChoice = "Rock";
-        return computerChoice
+        return "Rock"
     } else if (randomNumber >= 0.33) {
-        computerChoice = "Paper";
-        return computerChoice
+        return "Paper"
     } else {
-        computerChoice = "Scissors";
-        return computerChoice
+        return "Scissors"
     }
 }
-
-getComputerChoice();
-console.log(computerChoice);
 
 function playRockPaperScissors(playerSelection, computerSelection) {
     if (playerSelection.toLowerCase() == computerSelection.toLowerCase()) {
-        return console.log("You both chose " + playerSelection.toLowerCase() + ", it is a tie.")
+        return "You both chose " + playerSelection.toLowerCase() + ", it is a tie."
     } else if (playerSelection.toLowerCase() == "rock") {
         if (computerSelection.toLowerCase() == "paper") {
-            return console.log("You lose! Paper beats rock.")
+            return "You lose! Paper beats rock."
         } else {
-            return console.log("You win! Rock beats scissors.")
+            return "You win! Rock beats scissors."
         }
     } else if (playerSelection.toLowerCase() == "paper") {
         if (computerSelection.toLowerCase() == "scissors") {
-            return console.log("You lose! Scissors beats paper.")
+            return "You lose! Scissors beats paper."
         } else {
-            return console.log("You win! Paper beats rock.")
+            return "You win! Paper beats rock."
         }
     } else {
         if (computerSelection.toLowerCase() == "rock") {
-            return console.log("You lose! Rock beats scissors.")
+            return "You lose! Rock beats scissors."
         } else {
-            return console.log("You win! Scissors beats paper.")
+            return "You win! Scissors beats paper."
         }
     }
 }
 
-playRockPaperScissors(playerChoice, computerChoice);
+console.log(computerChoice);
+console.log(playRockPaperScissors(playerChoice, computerChoice));
